@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pseudo elements</title>
-</head>
+    <style>
+        /* after before pseudo  */
+        button{
+            position: relative;
+            padding: 2%;
+            border-radius: 50px;
+            background-color: lightgreen;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
+        button::after, button::before {
+            transition: all .3s ease;
+            content:'' ;
+            height: 3px;
+            width: 0%;
+            position: absolute;
+            bottom: 0;
+            background-color: black;
+        }
+        button::after{
+            left: 0;
+        }
+        button::before {
+            right: 0;
+        }
+       button:hover::after,button:hover::before{
+        width: 50%;
+       }
 
+       p::first-line{
+        color: rgb(0, 255, 68);
+       }
+       p::first-letter{
+        font-size: 3rem;
+        color: black;
+       }
+       p::selection{
+        color: red;
+       }
+       
+    </style>
+</head>
 <body>
-    
+    <button class="button" type="submit">PseudoElem</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, odio? Eligendi, facilis! Sed fuga magnam accusamus iste quasi optio numquam, assumenda asperiores reiciendis corporis a dolore fugit, exercitationem in repellat?</p>
+
+
 </body>
 </html>
